@@ -6,29 +6,49 @@
 
 <mapper namespace="com.ssm.framework.team2.dao.InfoMapper">
 
-
-	<select id="findAInfo"
+	<select id="findWorkingDays"
 		resultType="com.ssm.framework.team2.entity.AMData">
-		SELECT LEFT（年月日,6) AS 年月 COUNT（年月）FROM CALENDAR_DATE WHERE 削除フラぐ=0 AND
-		休日フラぐ＝0 GROUP BY LEFT（年月日,6)
-
-		select*from user_info
-		<where>
-			del_flg = 0
-			<if test="userId != null and userId !=''">
-				and user_id =#{userId}
-			</if>
-			<if test="userName != null and userName != ''">
-				and user_name LIKE CONCAT('%', #{userName}, '%')
-			</if>
-			<if test="userGender != null and userGender !=''">
-				and user_gender =#{userGender}
-			</if>
+		SELECT LEFT(CALENDAR_DATE, 6) AS '年月', COUNT(年月)
+		FROM CALENDAR_DATE
+		<where>DEL_FLG = 0 AND HOLIDAY_FLG = 0
+			AND LEFT(CALENDAR_DATE, 6) =
+			#{WorkingDays}
 		</where>
-
+		GROUP BY LEFT(CALENDAR_DATE, 6)
 	</select>
 
+	<select id="findattendanceDays"
+		resultType="com.ssm.framework.team2.entity.AMData">
+		SELECT LEFT(CALENDAR_DATE, 6) AS '年月', COUNT(年月)
+		FROM CALENDAR_DATE
+		<where>HOLIDAY_FLG = 0 WORKING_HOURS != 0
+			AND LEFT(CALENDAR_DATE, 6) =
+			#{WorkingDays}
+		</where>
+		GROUP BY LEFT(CALENDAR_DATE, 6)
+	</select>
+
+	<select id="findWorkDays"
+		resultType="com.ssm.framework.team2.entity.AMData">
+
+		SELECT LEFT（CALENDAR_DATE,6),SUM(ABSENCE_HOURS) ,SUM(WORKING_HOURS),
+		SUM(OVERTIME_HOURS)FROM T_ATTENDANCE
+		<where>
+			del_flg = 0
+			<if test="absentHours != null and absentHours !=''">
+				and SUM(ABSENCE_HOURS) =#{absentHours}
+			</if>
+			<if test="workingHours != null and workingHours != ''">
+				and SUM(WORKING_HOURS) =#{workingHours}
+			</if>
+			<if test="overtimeHours != null and overtimeHours !=''">
+				and SUM(OVERTIME_HOURS) =#{overtimeHours}
+			</if>
+		</where>
+		GROUP BY LEFT（CALENDAR_DATE,6) ;
+	</select>
 </mapper>
+
         
         
         

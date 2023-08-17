@@ -13,7 +13,7 @@ public class AMData implements Serializable {
 	private String month;
 	private String workingDays;
 	private String attendanceDays;
-	private String absentHours;
+	private String absenceHours;
 	private String workingHours;
 	private String overtimeHours;
 }
