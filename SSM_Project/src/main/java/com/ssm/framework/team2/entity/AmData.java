@@ -8,7 +8,7 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-public class AMData implements Serializable {
+public class AmData implements Serializable {
 
 	private String month;
 	private String workingDays;

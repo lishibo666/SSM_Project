@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.ssm.framework.team2.entity.AMData;
+import com.ssm.framework.team2.entity.AmData;
 
 //Author Chin
 
@@ -12,8 +12,8 @@ import com.ssm.framework.team2.entity.AMData;
 public interface InfoMapper {
 
 	
-	List<AMData> findWorkDays();
-	
-	List<AMData> findAinfo();
+	List<AmData> findWorkingDays();
+	List<AmData> findattendanceDays();
+	List<AmData> findAinfo();
 
 }

@@ -7,7 +7,7 @@
 <mapper namespace="com.ssm.framework.team2.dao.InfoMapper">
 
 	<select id="findWorkingDays"
-		resultType="com.ssm.framework.team2.entity.AMData">
+		resultType="com.ssm.framework.team2.entity.AmData">
 		SELECT LEFT(CALENDAR_DATE, 6) AS '年月', COUNT(年月)
 		FROM CALENDAR_DATE
 		<where>DEL_FLG = 0 AND HOLIDAY_FLG = 0
@@ -18,7 +18,7 @@
 	</select>
 
 	<select id="findattendanceDays"
-		resultType="com.ssm.framework.team2.entity.AMData">
+		resultType="com.ssm.framework.team2.entity.AmData">
 		SELECT LEFT(CALENDAR_DATE, 6) AS '年月', COUNT(年月)
 		FROM CALENDAR_DATE
 		<where>HOLIDAY_FLG = 0 WORKING_HOURS != 0
@@ -28,8 +28,8 @@
 		GROUP BY LEFT(CALENDAR_DATE, 6)
 	</select>
 
-	<select id="findWorkDays"
-		resultType="com.ssm.framework.team2.entity.AMData">
+	<select id="findAInfo"
+		resultType="com.ssm.framework.team2.entity.AmData">
 
 		SELECT LEFT（CALENDAR_DATE,6),SUM(ABSENCE_HOURS) ,SUM(WORKING_HOURS),
 		SUM(OVERTIME_HOURS)FROM T_ATTENDANCE

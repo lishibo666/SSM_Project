@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.ssm.framework.team2.entity.AMData;
+import com.ssm.framework.team2.entity.AmData;
 
 //Author Chin
 
@@ -16,17 +16,17 @@ public class AMController {
 	@GetMapping("/attendance_month")
 	public String getAttendance(Model model) {
 
-		List<AMData> attendanceList = getAttendanceDataFromDatabase();
+		List<AmData> attendanceList = getAttendanceDataFromDatabase();
 
 		model.addAttribute("attendanceList", attendanceList);
 		return "attendance_month";
 	}
 
-	private List<AMData> getAttendanceDataFromDatabase() {
+	private List<AmData> getAttendanceDataFromDatabase() {
 
-		List<AMData> attendanceList = new ArrayList<>();
-		attendanceList.add(new AMData());
-		attendanceList.add(new AMData());
+		List<AmData> attendanceList = new ArrayList<>();
+		attendanceList.add(new AmData());
+		attendanceList.add(new AmData());
 
 		return attendanceList;
 	}

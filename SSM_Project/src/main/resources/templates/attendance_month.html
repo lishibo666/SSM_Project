@@ -53,13 +53,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="attendance : ${attendanceList}">
-						<td th:text="${attendance.month}"></td>
-						<td th:text="${attendance.workingDays}"></td>
-						<td th:text="${attendance.attendanceDays}"></td>
-						<td th:text="${attendance.absentDays}"></td>
-						<td th:text="${attendance.actualWorkingHours}"></td>
-						<td th:text="${attendance.overtimeHours}"></td>
+					<tr th:each="amData : ${attendanceList}" th:object="${amData}">
+						<td th:text="*{month}"></td>
+						<td th:text="*{workingDays}"></td>
+						<td th:text="*{attendanceDays}"></td>
+						<td th:text="*{absenceHours}"></td>
+						<td th:text="*{workingHours}"></td>
+						<td th:text="*{overtimeHours}"></td>
 					</tr>
 				</tbody>
 			</table>
