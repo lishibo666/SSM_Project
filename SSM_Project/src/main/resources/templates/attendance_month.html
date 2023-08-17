@@ -54,7 +54,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="amData : ${attendanceList}" th:object="${amData}">
-						<td th:text="*{month}"></td>
+						<td><a th:href="@{/ }"　th:text="*{month}"> </a></td>
 						<td th:text="*{workingDays}"></td>
 						<td th:text="*{attendanceDays}"></td>
 						<td th:text="*{absenceHours}"></td>
