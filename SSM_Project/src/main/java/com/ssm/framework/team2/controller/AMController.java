@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.ssm.framework.team2.adata.AttendanceData;
-//dev:chin
+
 @Controller
 public class AMController {
 	@GetMapping("/attendance_month")
