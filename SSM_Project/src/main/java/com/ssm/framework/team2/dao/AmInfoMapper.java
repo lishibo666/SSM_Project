@@ -11,9 +11,10 @@ import com.ssm.framework.team2.entity.AmData;
 @Mapper
 public interface AmInfoMapper {
 
-	
 	List<AmData> findWorkingDays();
+
 	List<AmData> findattendanceDays();
+
 	List<AmData> findAinfo();
 
 }
