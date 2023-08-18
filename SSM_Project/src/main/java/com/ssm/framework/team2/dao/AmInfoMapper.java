@@ -9,7 +9,7 @@ import com.ssm.framework.team2.entity.AmData;
 //Author Chin
 
 @Mapper
-public interface InfoMapper {
+public interface AmInfoMapper {
 
 	
 	List<AmData> findWorkingDays();
