@@ -38,4 +38,5 @@ public class ListController {
 	public String listView2() {
 		return "list";
 	}
+	
 }
