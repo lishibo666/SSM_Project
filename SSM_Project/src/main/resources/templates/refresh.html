@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="UTF-8">
+    <title>勤怠情報登録・更新</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left; /* ここを追加 */
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+        input[type="date"],
+        input[type="time"],
+        input[type="number"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .form-buttons {
+            text-align: right;
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="action.js">
+        <div class="form-row">
+            <label for="日付">日付：</label>
+            <input type="date" id="日付" name="日付" value="2023-08-17" />
+        </div>
+        <div class="form-row">
+            <label for="作業開始時間">作業開始時間：</label>
+            <input type="time" name="作業開始時間" />
+        </div>
+        <div class="form-row">
+            <label for="作業終了時間">作業終了時間：</label>
+            <input type="time" name="作業終了時間" />
+        </div>
+        <div class="form-row">
+            <label for="休憩時間">休憩時間：</label>
+            <input type="number" step="0.01" />
+        </div>
+        <div class="form-row">
+            <label for="残業時間">残業時間：</label>
+            <input type="number" step="0.01" />
+        </div>
+        <div class="form-row">
+            <label for="状態">状態：</label>
+            <select name="状態">
+                <option value="出勤">出勤</option>
+                <option value="遅刻">遅刻</option>
+                <option value="早退">早退</option>
+                <option value="休み">休み</option>
+                <option value="その他">その他</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="申請事由">申請事由：</label>
+            <input type="text" name="申請事由" required maxlength="100" />
+        </div>
+        <div class="form-row">
+            <label for="作業内容">作業内容：</label>
+            <input type="text" name="作業内容" required maxlength="100" />
+        </div>
+        <div class="form-row">
+            <label for="備考">備考：</label>
+            <input type="text" name="備考" required maxlength="100" />
+        </div>
+        <div class="form-buttons">
+            <input type="submit" value="更新" />
+            <input type="submit" value="登録" />
+            <input type="submit" value="戻る" />
+        </div>
+    </form>
+</body>
+</html>
