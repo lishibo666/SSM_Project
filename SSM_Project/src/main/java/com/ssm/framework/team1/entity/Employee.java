@@ -3,8 +3,12 @@ package com.ssm.framework.team1.entity;
 import java.io.Serializable;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Setter
+@Getter
 public class Employee implements Serializable {
 	private String employeeId;
 	private String entryDateFrom;
