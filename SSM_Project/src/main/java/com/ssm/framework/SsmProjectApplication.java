@@ -13,5 +13,4 @@ public class SsmProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SsmProjectApplication.class, args);
 	}
-
 }
