@@ -13,7 +13,7 @@
 		SELECT * FROM T_EMPLOYEE 
 		<where>
 			del_flg = 0
-			<if test="employeeId!=null and employeeId !=''">
+			<if test="employeeId !=null and employeeId !=''">
 				AND EMPLOYEE_ID = #{employeeId}
 			</if>
 		</where> 

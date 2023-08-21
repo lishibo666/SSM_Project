@@ -9,6 +9,7 @@ import com.ssm.framework.team1.form.SearchForm;
 
 @Mapper
 public interface ListMapper {
+	
 	List<Employee> findall();
 	
 	List<Employee> findEmployees(SearchForm searchForm);

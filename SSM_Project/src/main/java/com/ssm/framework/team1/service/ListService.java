@@ -15,7 +15,7 @@ public class ListService {
 	@Autowired
 	private ListMapper mapper;
 	
-	public List<Employee>getAllEmployee(){
+	public List<Employee> getAllEmployee(){
 		return mapper.findall();
 	}
 	
